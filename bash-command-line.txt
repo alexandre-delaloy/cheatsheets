@@ -280,10 +280,50 @@ E.G.
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
 
 
-[2] - SYSTEM
+[2] - NETWORK
 
 
-[2.1] - DISPLAYING DISK USAGE STATE
+[2.1] - REMOTE LOGIN TO A HOST OR INSTANCE
+----
+  ssh [USER]@[HOST]                             Establish a SSH connection to the [HOST] with user [USER]
+  --
+  ssh -i [SSHKEY] [USER]@[HOST]                 Connect using the provided private SSH key
+  ssh -p [PORT] [USER]@[HOST]                   Connect with a specific port
+E.G.
+  ssh ubuntu@35.181.54.187
+  ssh -i ~/.ssh/foo_key ubuntu@35.181.54.187
+  ssh -p 666 ubuntu@35.181.54.187
+
+
+[2.2] - STATUS OF A HOST
+----
+  ping [HOST]                                   Ping [HOST] and display STATUS
+  --                                            --
+  ping -c n [HOST]                              Stop after receiving n packets
+  ping -i n [HOST]                              Wait n seconds between sending each packet
+  ping -v [HOST]                                Show verbose output
+E.G.
+  ping google.com
+  ping -c 6 -i 2 -v reddit.com
+
+
+[2.3] - TRANSFER A URL
+----
+  curl [URL]                                    Output the response of the URL
+  --                                            --
+  curl [URL] > [F]                              Output written in file at [F]
+  curl -sS [URL]                                Silent mode, only show errors
+  curl -sS [URL] | [LANGUAGE]                   Execute the response with a specific [LANGUAGE]
+E.G.
+  curl localhost:80 
+  curl localhost:80 > foo.sh
+  curl -sS localhost:80 | sh
+  
+
+[3] - SYSTEM
+
+
+[3.1] - DISPLAYING DISK USAGE STATE
 ----
   du                                            Estimate file(s) usage (all files in workdir)
   --                                            --
