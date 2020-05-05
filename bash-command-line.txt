@@ -1,0 +1,103 @@
+BASH COMMAND LINE CHEATSHEET
+------------
+
+
+
+[0] - Getting help:
+------
+
+	man [command]			Read the manual for a given command
+	[command] -h || --help		Ask the command for help
+	
+e.g.
+	man chmod
+	chmod -h
+
+
+
+[1] - Files and directories manipulation, navigation and display
+------
+
+
+Listing directory content
+----
+
+	ls [PATH]			List the files or directory at [PATH]
+	--
+	ls [PATH1] [PATH2]		List both [PATH1] and [PATH2]
+	ls -l [PATH]			Long listing format
+	ls -a [PATH]			Show all files, including hidden files
+	ls -R [PATH]			Recursive listing
+	ls -F [PATH]			Show type of each file 
+					(/=directory, *=executable, @=link)
+
+e.g.
+	ls /bin
+	ls -la $HOME
+	
+
+
+Changing directories
+----
+
+	cd [DIR]			Change into the directory at [DIR]
+	cd 				Change into your home directory ($HOME)
+	cd ..				Go to the parent directory
+	cd ../../ n times		Go up n parent directories 
+					(cd ../../../ => 3 parents directories)
+	cd -				Change to the previous directory
+	pwd				Return working directory fullname
+
+e.g.
+	cd /usr
+	cd ../../../../
+
+
+
+Creating files and directories
+----
+
+	mkdir [DIR]			Create a directory at [DIR]
+	--
+	mkdir -p [DIR]			Create one or more parents directories if needed 
+					(mkdir -p foo/bar => 2 parents directories)
+	touch [NEWFILE]			Create a [NEWFILE] if doesn't exist
+
+e.g.
+	mkdir -p ~/foo/bar
+	touch ~/foo/bar/john-doe.txt
+
+
+
+Removing files and directories
+----
+
+	rmdir [DIR]			Remove directory at [DIR] (it must be empty)
+	rm [FILE]			Remove a file
+	--
+	rm -r [DIR]			Recursively remove all files, subdirectories and
+					files into subdirectories starting at [DIR]
+	rm -i [FILE/DIR]		Run in interactive mode
+	rm -f [FILE/DIR]		Remove regardless of the [FILE/DIR]'s permissions
+
+e.g.
+	rm -f ~/foo/bar/john-doe.txt
+	rm -ri ~/foo/bar
+	rm -rf ~/foo
+
+
+
+Copying, moving and renaming files and directories
+----
+
+	[cp/mv] [FILE] [DEST_DIR]		Copy/Move [FILE] to [DEST_DIR]
+	--
+	cp -r [SRC_DIR] [DEST_DR]		Copy [SRC_DIR] recursively to [DEST_DIR]
+						(directory, files, subdir and subfiles) 
+	mv [OLDFILE] [NEWFILE]			Rename [OLDFILE] to [NEWFILE]
+	
+e.g.
+	[cp/mv] foo.txt ~/bar/
+	cp -r ~/foo/ ~/bar/
+	mv foo.txt bar.txt	
+	
