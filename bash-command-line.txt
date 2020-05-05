@@ -1,95 +1,105 @@
-BASH COMMAND LINE CHEATSHEET
-------------
+ ------------------------------------------------------------------------------------------------
+|                                   BASH COMMAND LINE CHEATSHEET                                 |
+|                                                                                                |
+|                                 by Alexandre Delaloy - @blyndusk                               |
+ ------------------------------------------------------------------------------------------------
 
 
 
-[0] - Getting help:
-------
+Getting help:
+----
 
-  man [command]                   Read the manual for a given command
-  [command] -h || --help          Ask the command for help
+  man [command]                       Read the manual for a given command
+  [command] -h || --help              Ask the command for help
   
 e.g.
   man chmod
   chmod -h
 
 
-
-[1] - Files and directories manipulation, navigation and display
-------
-
+--------------------------------------------------------------------------------------------------
 
 Listing directory content
 ----
 
-  ls [PATH]                       List the files or directory at [PATH]
+  ls [PATH]                           List the files or directory at [PATH]
   --
-  ls [PATH1] [PATH2]              List both [PATH1] and [PATH2]
-  ls -l [PATH]                    Long listing format
-  ls -a [PATH]                    Show all files, including hidden files
-  ls -R [PATH]                    Recursive listing
-  ls -F [PATH]                    Show type of each file 
-                                  (/=directory, *=executable, @=link)
+  ls [PATH1] [PATH2]                  List both [PATH1] and [PATH2]
+  ls -l [PATH]                        Long listing format
+  ls -a [PATH]                        Show all files, including hidden files
+  ls -R [PATH]                        Recursive listing
+  ls -F [PATH]                        Show type of each file 
+                                      (/=directory, *=executable, @=link)
 e.g.
-  ls /bin
+  ls ~/foo
   ls -la $HOME
   
+
+--------------------------------------------------------------------------------------------------
 
 Changing directories
 ----
 
-  cd [DIR]                        Change into the directory at [DIR]
-  cd                              Change into your home directory ($HOME)
-  cd ..                           Go to the parent directory
-  cd ../../ n times               Go up n parent directories 
-                                  (cd ../../../ => 3 parents directories)
-  cd -                            Change to the previous directory
-  pwd                             Return working directory fullname
+  cd [DIR]                            Change into the directory at [DIR]
+  cd                                  Change into your home directory ($HOME)
+  cd ..                               Go to the parent directory
+  cd ../../ n times                   Go up n parent directories 
+                                      (cd ../../../ => 3 parents directories)
+  cd -                                Change to the previous directory
+  pwd                                 Return working directory fullname
 
 e.g.
-  cd /usr
+  cd ~/foo
   cd ../../../../
+
+
+--------------------------------------------------------------------------------------------------
 
 
 Creating files and directories
 ----
 
-  mkdir [DIR]                     Create a directory at [DIR]
+  mkdir [DIR]                         Create a directory at [DIR]
   --
-  mkdir -p [DIR]                  Create one or more parents directories if needed 
-                                  (mkdir -p foo/bar => 2 parents directories)
-  touch [NEWFILE]                 Create a [NEWFILE] if doesn't exist
+  mkdir -p [DIR]                      Create one or more parents directories if needed 
+                                      (mkdir -p foo/bar => 2 parents directories)
+  touch [NEWFILE]                     Create a [NEWFILE] if doesn't exist
 
 e.g.
   mkdir -p ~/foo/bar
-  touch ~/foo/bar/john-doe.txt
+  touch ~/foo/bar/foobar.txt
+
+
+--------------------------------------------------------------------------------------------------
 
 
 Removing files and directories
 ----
 
-  rmdir [DIR]                     Remove directory at [DIR] (it must be empty)
-  rm [FILE]                       Remove a file
+  rmdir [DIR]                         Remove directory at [DIR] (it must be empty)
+  rm [FILE]                           Remove a file
   --
-  rm -r [DIR]                     Recursively remove all files, subdirectories and
-                                  files into subdirectories starting at [DIR]
-  rm -i [FILE/DIR]                Run in interactive mode
-  rm -f [FILE/DIR]                Remove regardless of the [FILE/DIR]'s permissions
+  rm -r [DIR]                         Recursively remove all files, subdirectories and
+                                      files into subdirectories starting at [DIR]
+  rm -i [FILE/DIR]                    Run in interactive mode
+  rm -f [FILE/DIR]                    Remove regardless of the [FILE/DIR]'s permissions
 
 e.g.
-  rm -f ~/foo/bar/john-doe.txt
+  rm -f ~/foo/bar/foobar.txt
   rm -ri ~/foo/bar
   rm -rf ~/foo
 
 
+--------------------------------------------------------------------------------------------------
+
 Copying, moving and renaming files and directories
 ----
 
-  [cp/mv] [FILE] [DEST_DIR]       Copy/Move [FILE] to [DEST_DIR]
+  [cp/mv] [FILE] [DEST_DIR]           Copy/Move [FILE] to [DEST_DIR]
   --
-  cp -r [SRC_DIR] [DEST_DR]       Copy [SRC_DIR] recursively to [DEST_DIR]
-                                  (directory, files, subdir and subfiles) 
-  mv [OLDFILE] [NEWFILE]          Rename [OLDFILE] to [NEWFILE]
+  cp -r [SRC_DIR] [DEST_DR]           Copy [SRC_DIR] recursively to [DEST_DIR]
+                                      (directory, files, subdir and subfiles) 
+  mv [OLDFILE] [NEWFILE]              Rename [OLDFILE] to [NEWFILE]
   
 e.g.
   [cp/mv] foo.txt ~/bar/
@@ -97,5 +107,52 @@ e.g.
   mv foo.txt bar.txt  
 
 
+--------------------------------------------------------------------------------------------------
+
 Viewing files
-  
+----
+
+  cat [FILE]                          Display the content of [FILE]
+  less [FILE]                         Browse throught a text [FILE]
+  head [FILE]                         Output the top portion of [FILE]
+  tail [FILE]                         Output the bottom of [FILE]
+  --
+  cat -n [FILE]                       Display with line numbers output
+  [head/tail] -n [FILE]               Display n number of lines (10 by default)
+
+e.g.
+  cat -n foo.txt
+  head -6 foo.txt
+
+
+--------------------------------------------------------------------------------------------------
+
+Editing files
+----
+
+  vim [FILE]                          Use the vim editor to view and modify [FILE]
+  nano [FILE]                         Use the nano editor to view and modify [FILE]
+
+e.g.
+  vim foo.txt  
+  nano bar.txt
+
+
+--------------------------------------------------------------------------------------------------
+
+Sorting files content
+----
+
+  sort [FILE]                         Sort or merge lines of text and binary files
+  --
+  sort -r [FILE]                      Sort in reverse order
+  sort -u [FILE]                      Suppress all lines that is equal to another
+  sort -o [OUTPUT_FILE] [FILE]        Print the output to [OUTPUT_FILE]
+  sort -k n [FILE]                    Sort by key (n is the field number)
+
+e.g.
+  sort -ru -o bar.txt foo.txt
+  sort -k 2 foo.txt
+
+
+--------------------------------------------------------------------------------------------------
