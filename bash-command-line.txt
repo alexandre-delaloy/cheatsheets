@@ -4,9 +4,10 @@
 |                                 by Alexandre Delaloy - @blyndusk                               |
  ------------------------------------------------------------------------------------------------
 
+[0] - GENERAL
 
-MY NOTATION
----- ----
+[0.0] - MY NOTATION
+----
   [D]                                           Directory                            
   [D...]                                        Directory, directories
   [F]                                           File
@@ -15,8 +16,8 @@ MY NOTATION
   [FD...]                                       File, files, directory, directories
 
 
-GETTING HELP
----- ----
+[0.1] - GETTING HELP
+----
   man [command]                                 Read the manual for a given command
   [command] -h | --help                         Ask the command for help
 E.G.
@@ -24,8 +25,10 @@ E.G.
   chmod -h
 
 
-RERUN COMMANDS AND REUSE ARGUMENTS
----- ----
+[0.2] - WILDCARDS
+
+[0.3] - RERUN COMMANDS AND REUSE ARGUMENTS
+----
   ![a-z]                                        Rerun the command matching the [a-z] string
   !!                                            Rerun the last command
   [command] !*                                  Reuse all arguments of the last command
@@ -47,9 +50,10 @@ E.G.
   ls !*                                         => ls foo.txt bar.txt
   ls !$                                         => ls bar.txt
 
+[1] - FILES AND DIRECTORIES MANIPULATION, NAVIGATION AND DISPLAY
 
-LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
----- ----
+[1.1] - LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
+----
   ls [FD...]                                    List file(s) or director(y/ies) at [FD...]
   --                                            --
   ls [FD1...] [FD2...]                          List both [FD1...] and [FD2...]
@@ -63,8 +67,8 @@ E.G.
   ls -la $HOME ./bar
 
 
-CHANGING DIRECTORY
----- ----
+[1.2] - CHANGING DIRECTORY
+----
   cd [D]                                        Change into the directory at [D]
   cd                                            Change into your home directory ($HOME)
   cd ..                                         Go to the parent directory
@@ -76,9 +80,8 @@ E.G.
   cd ~/foo
   cd ../../../../
 
-
-CREATING FILE(S) AND DIRECTOR(Y/IES)
----- ----
+[1.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
+----
   mkdir [D...]                                  Create director(y/ies) at [D...]
   --                                            --
   mkdir -p [D...]                               Create one or more parents directories if needed 
@@ -91,8 +94,8 @@ E.G.
   touch foo.txt ~/foo/bar.txt
 
 
-REMOVING FILE(S) AND DIRECTOR(Y/IES)
----- ----
+[1.4] - REMOVING FILE(S) AND DIRECTOR(Y/IES)
+----
   rmdir [D...]                                  Remove director(y/ies) at [D...] (it must be empty)
   rm [F...]                                     Remove file(s) at [F...]
   --                                             --
@@ -107,8 +110,8 @@ E.G.
   rm -rf ~/foo ./bar
 
 
-COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
----- ----
+[1.5] - COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
+----
 
   [cp/mv] [F...] [D]                            Copy/Move file(s) to [D]
   --                                            --
@@ -122,8 +125,8 @@ E.G.
   mv foo.txt bar.txt  
 
 
-VIEWING FILE(S)
----- ----
+[1.6] - VIEWING FILE(S)
+----
   cat [F...]                                    Display the content of file(s)
   less [F...]                                   Browse throught a text file(s)
   head [F...]                                   Output the top portion of file(s)
@@ -136,8 +139,8 @@ E.G.
   head -6 foo.txt
 
 
-EDITING FILE(S)
----- ----
+[1.7] - EDITING FILE(S)
+----
   vim [F...]                                    Use the vim editor to view and modify a file(s)
   nano [F...]                                   Use the nano editor to view and modify a file(s)
 E.G.
@@ -145,8 +148,8 @@ E.G.
   nano bar.txt
 
 
-SORTING FILE(S) CONTENT
----- ----
+[1.8] - SORTING FILE(S) CONTENT
+----
   sort [F...]                                   Sort or merge lines of text and binary file(s)
   --                                            --
   sort -r [F...]                                Sort in reverse order
@@ -158,8 +161,22 @@ E.G.
   sort -k 2 foo.txt
 
 
-MANIPULATING TAR ARCHIVE(S)
----- ----
+[1.9] - SEARCH PATTERN IN FILE
+----
+  grep [PATTERN] [F...]                         Search [PATTERN] in [F...]
+  grep -E [PATTERN] [F...]                      Search with extended regex
+  grep -f [PATTERN_FILE] [F...]                 Search with file pattern
+  grep -i [PATTERN] [F...]                      Search with case insensitive
+  grep -o [PATTERN] [F...]                      Output only the match, not the entire line
+  grep -n [PATTERN] [F...]                      Prefix output with line number
+E.G.
+  cat foo.txt | grep -nio 'foo'
+  grep -E '^[A-Z]+*[0-9]' foo.txt 
+  grep -f patterns.txt foo.txt
+
+
+[1.10] - MANIPULATING TAR ARCHIVE(S)
+----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
   -c                                            Create a tar archive
@@ -175,8 +192,10 @@ E.G.
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
 
 
-DISPLAYING DISK USAGE STATE
----- ----
+[2] - SYSTEM
+
+[2.1] - DISPLAYING DISK USAGE STATE
+----
   du                                            Estimate file(s) usage (all files in workdir)
   du [FD...]                                    Estimate file(s) usage at [FD...]
   du -h                                         Display size in human readable format (octets)
@@ -184,5 +203,3 @@ DISPLAYING DISK USAGE STATE
 E.G.
   du ~/foo ./bar
   du -h /
-
-
