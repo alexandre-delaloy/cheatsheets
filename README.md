@@ -15,3 +15,11 @@ chmod +x ./.githooks/commit-msg
 - **ALWAYS** name your commit message like that
   - `"(Add|Fix|Remove|Update): commit message"`
 - **ELSE**, your commit will be rejected by **Git hooks**
+
+## Toc
+
+- [Bash Command Line Cheatsheet](./bash-command-line.txt)
+
+## License
+
+Under [MIT](./LICENSE) license.
