@@ -1,32 +1,38 @@
 # Cheatsheets
 
-> 🗞 My cheatsheets
+> 🗞 My cheat sheets, all i've learned so far
 
-## Use
-
-### See the Table of Content of a file
-
-```bash
-source ba.sh [file] toc
-
-e.g.
-
-source ba.sh bash-command-line.txt toc
-``` 
-
-### Go to a specific command
-
-```bash
-source ba.sh [file] goto [command] 
-
-e.g.
-
-source ba.sh bash-command-line.txt goto mkdir
-```
 
 ## Toc
 
-- [Bash Command Line Cheatsheet](./bash-command-line.txt)
+> shitty website: [blyndusk.github.io/cheatsheets](https://blyndusk.github.io/cheatsheets/)
+
+- [Bash Command Line Cheat Sheet](./bash-command-line.txt)
+
+## Use
+
+> Let me introduce you our friend `Woosh 🤖`
+
+### See the Table of Content of a cheat sheet
+
+```bash
+source woo.sh [category] toc
+
+e.g.
+
+source woo.sh bash toc
+``` 
+
+### Go to a specific command or a category
+
+```bash
+source woo.sh [category] goto [command] 
+
+e.g.
+
+source woo.sh bash goto mkdir
+source woo.sh bash goto 0.3
+```
 
 ## License
 
