@@ -6,26 +6,50 @@
 
 
 MY NOTATION
-----
+---- ----
   [D]                                           Directory                            
   [D...]                                        Directory, directories
   [F]                                           File
   [F...]                                        Files
   [FD]                                          File, directory
   [FD...]                                       File, files, directory, directories
----------------------------------------------------------------------------------------------------
+
 
 GETTING HELP
-----
+---- ----
   man [command]                                 Read the manual for a given command
   [command] -h | --help                         Ask the command for help
 E.G.
   man chmod
   chmod -h
----------------------------------------------------------------------------------------------------
+
+
+RERUN COMMANDS AND REUSE ARGUMENTS
+---- ----
+  ![a-z]                                        Rerun the command matching the [a-z] string
+  !!                                            Rerun the last command
+  [command] !*                                  Reuse all arguments of the last command
+  [command] !$                                  Reuse last argument of the last command
+
+COMMAND RUN => [du -h /], [ls $HOME]
+
+E.G.
+  !d                                            => du -h /
+  !ls                                           => ls $HOME
+  !!                                            => ls $HOME
+  !! | grep 'bar'                               => ls $HOME | grep 'bar'
+  adduser john                                  => Permission denied
+  sudo !!                                       => ok
+  touch /bin/hello-world.sh                     => ok
+  vim !*                                        => vim /bin/hello-world.sh
+  chmod +x !*                                   => chmod +x /bin/hello-world.sh
+  touch foo.txt bar.txt                         => ok
+  ls !*                                         => ls foo.txt bar.txt
+  ls !$                                         => ls bar.txt
+
 
 LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
-----
+---- ----
   ls [FD...]                                    List file(s) or director(y/ies) at [FD...]
   --                                            --
   ls [FD1...] [FD2...]                          List both [FD1...] and [FD2...]
@@ -37,10 +61,10 @@ LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
 E.G.
   ls ~/foo
   ls -la $HOME ./bar
----------------------------------------------------------------------------------------------------
+
 
 CHANGING DIRECTORY
-----
+---- ----
   cd [D]                                        Change into the directory at [D]
   cd                                            Change into your home directory ($HOME)
   cd ..                                         Go to the parent directory
@@ -51,10 +75,10 @@ CHANGING DIRECTORY
 E.G.
   cd ~/foo
   cd ../../../../
----------------------------------------------------------------------------------------------------
+
 
 CREATING FILE(S) AND DIRECTOR(Y/IES)
-----
+---- ----
   mkdir [D...]                                  Create director(y/ies) at [D...]
   --                                            --
   mkdir -p [D...]                               Create one or more parents directories if needed 
@@ -65,10 +89,10 @@ E.G.
   mkdir -p ~/foo/bar ./bar
   touch ~/foo/bar/foobar.txt
   touch foo.txt ~/foo/bar.txt
----------------------------------------------------------------------------------------------------
+
 
 REMOVING FILE(S) AND DIRECTOR(Y/IES)
-----
+---- ----
   rmdir [D...]                                  Remove director(y/ies) at [D...] (it must be empty)
   rm [F...]                                     Remove file(s) at [F...]
   --                                             --
@@ -81,10 +105,10 @@ E.G.
   rm -f ~/foo/bar/foobar.txt
   rm -ri ~/foo/bar
   rm -rf ~/foo ./bar
----------------------------------------------------------------------------------------------------
+
 
 COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
-----
+---- ----
 
   [cp/mv] [F...] [D]                            Copy/Move file(s) to [D]
   --                                            --
@@ -96,10 +120,10 @@ E.G.
   [cp/mv] foo.txt bar.txt ~/bar/
   cp -r ~/foo/ ~/bar/
   mv foo.txt bar.txt  
----------------------------------------------------------------------------------------------------
+
 
 VIEWING FILE(S)
-----
+---- ----
   cat [F...]                                    Display the content of file(s)
   less [F...]                                   Browse throught a text file(s)
   head [F...]                                   Output the top portion of file(s)
@@ -110,19 +134,19 @@ VIEWING FILE(S)
 E.G.
   cat -n foo.txt
   head -6 foo.txt
----------------------------------------------------------------------------------------------------
+
 
 EDITING FILE(S)
-----
+---- ----
   vim [F...]                                    Use the vim editor to view and modify a file(s)
   nano [F...]                                   Use the nano editor to view and modify a file(s)
 E.G.
   vim foo.txt  
   nano bar.txt
----------------------------------------------------------------------------------------------------
+
 
 SORTING FILE(S) CONTENT
-----
+---- ----
   sort [F...]                                   Sort or merge lines of text and binary file(s)
   --                                            --
   sort -r [F...]                                Sort in reverse order
@@ -132,10 +156,10 @@ SORTING FILE(S) CONTENT
 E.G.
   sort -ru -o bar.txt foo.txt
   sort -k 2 foo.txt
----------------------------------------------------------------------------------------------------
+
 
 MANIPULATING TAR ARCHIVE(S)
-----
+---- ----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
   -c                                            Create a tar archive
@@ -149,10 +173,10 @@ E.G.
                                                 using verbose and compression
   tar -tf foo.gz                                List 'foo.gz' files in archive
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
----------------------------------------------------------------------------------------------------
+
 
 DISPLAYING DISK USAGE STATE
-----
+---- ----
   du                                            Estimate file(s) usage (all files in workdir)
   du [FD...]                                    Estimate file(s) usage at [FD...]
   du -h                                         Display size in human readable format (octets)
@@ -160,4 +184,5 @@ DISPLAYING DISK USAGE STATE
 E.G.
   du ~/foo ./bar
   du -h /
----------------------------------------------------------------------------------------------------
+
+
