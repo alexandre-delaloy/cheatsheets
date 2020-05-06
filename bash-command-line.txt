@@ -5,33 +5,27 @@
  ------------------------------------------------------------------------------------------------
 
 
-Notation
+MY NOTATION
+----
   [D]                                           Directory                            
   [D...]                                        Directory, directories
   [F]                                           File
   [F...]                                        Files
   [FD]                                          File, directory
   [FD...]                                       File, files, directory, directories
-
 ---------------------------------------------------------------------------------------------------
 
-
-Getting help:
+GETTING HELP
 ----
-
   man [command]                                 Read the manual for a given command
   [command] -h | --help                         Ask the command for help
-  
-e.g.
+E.G.
   man chmod
   chmod -h
-
 ---------------------------------------------------------------------------------------------------
 
-
-Listing directory content
+LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
 ----
-
   ls [FD...]                                    List file(s) or director(y/ies) at [FD...]
   --                                            --
   ls [FD1...] [FD2...]                          List both [FD1...] and [FD2...]
@@ -40,16 +34,13 @@ Listing directory content
   ls -R [FD...]                                 Recursive listing
   ls -F [FD...]                                 Show type of each file 
                                                 (/=directory, *=executable, @=link)
-e.g.
+E.G.
   ls ~/foo
   ls -la $HOME ./bar
-  
 ---------------------------------------------------------------------------------------------------
 
-
-Changing directories
+CHANGING DIRECTORY
 ----
-
   cd [D]                                        Change into the directory at [D]
   cd                                            Change into your home directory ($HOME)
   cd ..                                         Go to the parent directory
@@ -57,35 +48,27 @@ Changing directories
                                                 (cd ../../../ => 3 parents directories)
   cd -                                          Change to the previous directory
   pwd                                           Return working directory fullname
-
-e.g.
+E.G.
   cd ~/foo
   cd ../../../../
-
 ---------------------------------------------------------------------------------------------------
 
-
-Creating files and directories
+CREATING FILE(S) AND DIRECTOR(Y/IES)
 ----
-
   mkdir [D...]                                  Create director(y/ies) at [D...]
   --                                            --
   mkdir -p [D...]                               Create one or more parents directories if needed 
                                                 (mkdir -p foo/bar => 2 parents directories)
   touch [F...]                                  Create file(s) if doesn't exist
-
-e.g.
+E.G.
   mkdir ./bar
   mkdir -p ~/foo/bar ./bar
   touch ~/foo/bar/foobar.txt
   touch foo.txt ~/foo/bar.txt
-
 ---------------------------------------------------------------------------------------------------
 
-
-Removing files and directories
+REMOVING FILE(S) AND DIRECTOR(Y/IES)
 ----
-
   rmdir [D...]                                  Remove director(y/ies) at [D...] (it must be empty)
   rm [F...]                                     Remove file(s) at [F...]
   --                                             --
@@ -93,17 +76,14 @@ Removing files and directories
                                                 files into subdirectories starting at [FD...]
   rm -i [F...]                                  Run in interactive mode
   rm -f [F...]                                  Remove regardless of the [F...]'s permissions
-
-e.g.
+E.G.
   rmdir ~/foo ./bar
   rm -f ~/foo/bar/foobar.txt
   rm -ri ~/foo/bar
   rm -rf ~/foo ./bar
-
 ---------------------------------------------------------------------------------------------------
 
-
-Copying, moving and renaming files and directories
+COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
 ----
 
   [cp/mv] [F...] [D]                            Copy/Move file(s) to [D]
@@ -112,17 +92,14 @@ Copying, moving and renaming files and directories
                                                 (directory, files, subdir and subfiles) 
   mv [OLDFILE] [NEWFILE]                        Rename [OLDFILE] to [NEWFILE]
   
-e.g.
+E.G.
   [cp/mv] foo.txt bar.txt ~/bar/
   cp -r ~/foo/ ~/bar/
   mv foo.txt bar.txt  
-
 ---------------------------------------------------------------------------------------------------
 
-
-Viewing files
+VIEWING FILE(S)
 ----
-
   cat [F...]                                    Display the content of file(s)
   less [F...]                                   Browse throught a text file(s)
   head [F...]                                   Output the top portion of file(s)
@@ -130,72 +107,57 @@ Viewing files
   --
   cat -n [F...]                                 Display with line numbers output
   [head/tail] -n [F...]                         Display n number of lines (10 by default)
-
-e.g.
+E.G.
   cat -n foo.txt
   head -6 foo.txt
-
 ---------------------------------------------------------------------------------------------------
 
-
-Editing files
+EDITING FILE(S)
 ----
-
   vim [F...]                                    Use the vim editor to view and modify a file(s)
   nano [F...]                                   Use the nano editor to view and modify a file(s)
-
-e.g.
+E.G.
   vim foo.txt  
   nano bar.txt
-
 ---------------------------------------------------------------------------------------------------
 
-
-Sorting files content
+SORTING FILE(S) CONTENT
 ----
-
   sort [F...]                                   Sort or merge lines of text and binary file(s)
   --                                            --
   sort -r [F...]                                Sort in reverse order
   sort -u [F...]                                Suppress all lines that is equal to another
   sort -o [OUTPUT_FILE] [F...]                  Print the output to [OUTPUT_FILE]
   sort -k n [F...]                              Sort by key (n is the field number)
-
-e.g.
+E.G.
   sort -ru -o bar.txt foo.txt
   sort -k 2 foo.txt
-
 ---------------------------------------------------------------------------------------------------
 
-
-Manipulating tar archive(s)
+MANIPULATING TAR ARCHIVE(S)
 ----
-
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
-
-Options
+OPTIONS
   -c                                            Create a tar archive
   -x                                            Extract files from the archive
   -t                                            Display the table of contents (list)
   -v                                            Be verbose
   -z                                            Use compression
   -f [OUTPUT_FILE]                              Output archive file to [OUTPUT_FILE]
-
-e.g.
+E.G.
   tar -czvf foo.gz ~/foo                        Create a archive named 'foo.gz' from the 'foo' dir
                                                 using verbose and compression
   tar -tf foo.gz                                List 'foo.gz' files in archive
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
-
 ---------------------------------------------------------------------------------------------------
 
-
-Displaying disk usage stats
+DISPLAYING DISK USAGE STATE
 ----
-
   du                                            Estimate file(s) usage (all files in workdir)
   du [FD...]                                    Estimate file(s) usage at [FD...]
   du -h                                         Display size in human readable format (octets)
   du -k                                         Display size in Kilobytes
-
+E.G.
+  du ~/foo ./bar
+  du -h /
 ---------------------------------------------------------------------------------------------------
