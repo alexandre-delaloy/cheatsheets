@@ -2,19 +2,27 @@
 
 > 🗞 My cheatsheets
 
-## Install
+## Use
+
+### See the Table of Content of a file
 
 ```bash
-git clone https://github.com/blyndusk/repo-template.git
-git config core.hooksPath .githooks
-chmod +x ./.githooks/commit-msg
+source ba.sh [file] toc
+
+e.g.
+
+source ba.sh bash-command-line.txt toc
+``` 
+
+### Go to a specific command
+
+```bash
+source ba.sh [file] goto [command] 
+
+e.g.
+
+source ba.sh bash-command-line.txt goto mkdir
 ```
-
-## Commits
-
-- **ALWAYS** name your commit message like that
-  - `"(Add|Fix|Remove|Update): commit message"`
-- **ELSE**, your commit will be rejected by **Git hooks**
 
 ## Toc
 
