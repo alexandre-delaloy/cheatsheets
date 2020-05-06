@@ -26,6 +26,16 @@ E.G.
 
 
 [0.2] - WILDCARDS
+----
+
+CATEGORIES OF CHARACTERS
+  [:upper:] | A-Z                               Uppercase letters
+  [:lower:] | a-z                               Lowercase letters
+  [:alpha:] | A-z                               [:upper:] + [:lower:]
+  [:digit:] | 0-9                               Numbers in decimal, 0 to 9
+  [:alnum:] | A-z0-9                            [:upper:] + [:lower:] + [:digit:]
+  [:space:]                                     Whitespace
+
 
 [0.3] - RERUN COMMANDS AND REUSE ARGUMENTS
 ----
@@ -161,7 +171,7 @@ E.G.
   sort -k 2 foo.txt
 
 
-[1.9] - SEARCH PATTERN IN FILE
+[1.9] - SEARCH PATTERN IN FILE AND STRINGD
 ----
   grep [PATTERN] [F...]                         Search [PATTERN] in [F...]
   grep -E [PATTERN] [F...]                      Search with extended regex
@@ -170,6 +180,7 @@ E.G.
   grep -o [PATTERN] [F...]                      Output only the match, not the entire line
   grep -n [PATTERN] [F...]                      Prefix output with line number
 E.G.
+  ls -la | grep '[[:digit:]]'
   cat foo.txt | grep -nio 'foo'
   grep -E '^[A-Z]+*[0-9]' foo.txt 
   grep -f patterns.txt foo.txt
