@@ -36,11 +36,13 @@ STANDARD WILDCARDS (GLOBBING PATTERNS)
 REGULAR EXPRESSIONS
   .                                             Match any single character
   ?                                             Match between 0 and 1 of the precending token
-  *                                             Match 0 or more of the precendign token
+  *                                             Match 0 or more of the precending token
+  +                                             Match 1 or more of the precending token
   .*                                            Match any string, similar to * in standard
   ^                                             Match the beginging of a string / a line
   $                                             Match the end of a string / a line
   \                                             Used to escape character
+  |                                             Logical OR
   []                                            Specifies a range
   [^]                                           Logical NOT
 CATEGORIES OF CHARACTERS
@@ -186,11 +188,11 @@ E.G.
   sort -k 2 foo.txt
 
 
-[1.9] - SEARCH PATTERN IN FILE AND STRINGD
+[1.9] - SEARCH PATTERN IN FILE AND STRING
 ----
   grep [PATTERN] [F...]                         Search [PATTERN] in [F...]
   grep -E [PATTERN] [F...]                      Search with extended regex
-  grep -f [PATTERN_FILE] [F...]                 Search with file pattern
+  grep -f [PATTERN_FILE] [F...]                 Search with a file pattern using [PATTERN_FILE]
   grep -i [PATTERN] [F...]                      Search with case insensitive
   grep -o [PATTERN] [F...]                      Output only the match, not the entire line
   grep -n [PATTERN] [F...]                      Prefix output with line number
@@ -200,8 +202,19 @@ E.G.
   grep -E '^[A-Z]+*[0-9]' foo.txt 
   grep -f patterns.txt foo.txt
 
+[1.10] STREAM EDIT AND TEXT TRANSFORMATION
+----
+  sed 's/[FIND]/[REPLACE]/[FLAGS]' [F...]       Output the file with [FIND] pattern replaced with           
+                                                [REPLACE], with optional [FLAGS]
+  --                                             --
+  sed 's///' [F...] > [F]                       Create a new file with the output of original file
+  sed -i.bak 's///' [F...]                      Create a backup file (foo.txt.bak), rewrite foo.txt
+  sed -e 's///' -e 's///' [F...]                Using multiple expressions
+  sed -E 's///' [F...]                          Search with extended regex
+  sed -f [PATTERN_FILE] 's///' [F...]           Search with a file pattern using [PATTERN_FILE]
 
-[1.10] - MANIPULATING TAR ARCHIVE(S)
+
+[1.11] - MANIPULATING TAR ARCHIVE(S)
 ----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
