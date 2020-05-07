@@ -75,7 +75,22 @@ E.G.
   ls !*                                         => ls foo.txt bar.txt
   ls !$                                         => ls bar.txt
 
+
+[0.4] - ENVIRONMENT VARIABLES
+----
+  printenv                                      Display all environment variables 
+  --                                            --
+  $USERNAME                                     The name of the user
+  $HOSTNAME                                     The name of your computer
+  $HOME                                         The home directory of the current user
+  $PWD                                          The path to workdir directory
+  $PS1                                          The prompt settings
+  $SHELL                                        The path to default shell
+  $EDITOR                                       The path to default text editor
+  
+
 [1] - FILES AND DIRECTORIES MANIPULATION, NAVIGATION AND DISPLAY
+
 
 [1.1] - LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
 ----
@@ -95,6 +110,7 @@ E.G.
 [1.2] - CHANGING DIRECTORY
 ----
   cd [D]                                        Change into the directory at [D]
+  --                                            --
   cd                                            Change into your home directory ($HOME)
   cd ..                                         Go to the parent directory
   cd ../../ n times                             Go up n parent directories 
@@ -104,6 +120,7 @@ E.G.
 E.G.
   cd ~/foo
   cd ../../../../
+
 
 [1.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
 ----
@@ -137,13 +154,11 @@ E.G.
 
 [1.5] - COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
 ----
-
   [cp/mv] [F...] [D]                            Copy/Move file(s) to [D]
   --                                            --
   cp -r [FD...] [D]                             Copy file(s) and director(y/ies) recursively to [D]
                                                 (directory, files, subdir and subfiles) 
   mv [OLDFILE] [NEWFILE]                        Rename [OLDFILE] to [NEWFILE]
-  
 E.G.
   [cp/mv] foo.txt bar.txt ~/bar/
   cp -r ~/foo/ ~/bar/
@@ -189,6 +204,7 @@ E.G.
 [1.9] - SEARCH PATTERN IN FILE AND STRING
 ----
   grep [PATTERN] [F...]                         Search [PATTERN] in [F...]
+  --                                            --
   grep -E [PATTERN] [F...]                      Search with extended regex
   grep -f [PATTERN_FILE] [F...]                 Search with a file pattern using [PATTERN_FILE]
   grep -i [PATTERN] [F...]                      Search with case insensitive
@@ -199,6 +215,7 @@ E.G.
   cat foo.txt | grep -nio 'foo'
   grep -E '^[A-Z]+*[0-9]' foo.txt 
   grep -f patterns.txt foo.txt
+
 
 [1.10] STREAM EDIT AND TEXT TRANSFORMATION
 ----
@@ -215,9 +232,11 @@ E.G.
   sed -i.backup -f foo.sed foo.txt
   sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
+
 [1.11] FINDING FILES IN DIRECTOR(Y/IES)
 ----
   find [D...] -name [NAME]                      Find files matching the [NAME] in [D...] 
+  --                                            --
   find [D...] -name [NAME] -type [TYPE]         Find files with specific type
   find [D...] -name [NAME] -delete              Find files and delete them
   find [D...] -path [EXPR]                      Find files matching a pattern
@@ -249,6 +268,7 @@ E.G.
 [2.1] - DISPLAYING DISK USAGE STATE
 ----
   du                                            Estimate file(s) usage (all files in workdir)
+  --                                            --
   du [FD...]                                    Estimate file(s) usage at [FD...]
   du -h                                         Display size in human readable format (octets)
   du -k                                         Display size in Kilobytes
