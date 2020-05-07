@@ -56,13 +56,11 @@ CATEGORIES OF CHARACTERS
 
 [0.3] - RERUN COMMANDS AND REUSE ARGUMENTS
 ----
+COMMAND RUN => [du -h /], [ls $HOME]
   ![a-z]                                        Rerun the command matching the [a-z] string
   !!                                            Rerun the last command
   [command] !*                                  Reuse all arguments of the last command
   [command] !$                                  Reuse last argument of the last command
-
-COMMAND RUN => [du -h /], [ls $HOME]
-
 E.G.
   !d                                            => du -h /
   !ls                                           => ls $HOME
@@ -217,8 +215,19 @@ E.G.
   sed -i.backup -f foo.sed foo.txt
   sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
+[1.11] FINDING FILES IN DIRECTOR(Y/IES)
+----
+  find [D...] -name [NAME]                      Find files matching the [NAME] in [D...] 
+  find [D...] -name [NAME] -type [TYPE]         Find files with specific type
+  find [D...] -name [NAME] -delete              Find files and delete them
+  find [D...] -path [EXPR]                      Find files matching a pattern
+E.G.
+  find ~/foo -name 'foo'
+  find ./bar -type f -delete
+  find -path '*Library*' -type d -name 'bar'
 
-[1.11] - MANIPULATING TAR ARCHIVE(S)
+
+[1.12] - MANIPULATING TAR ARCHIVE(S)
 ----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
