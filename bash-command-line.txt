@@ -211,7 +211,11 @@ E.G.
   sed -i.bak 's///' [F...]                      Create a backup file (foo.txt.bak), rewrite foo.txt
   sed -e 's///' -e 's///' [F...]                Using multiple expressions
   sed -E 's///' [F...]                          Search with extended regex
-  sed -f [PATTERN_FILE] 's///' [F...]           Search with a file pattern using [PATTERN_FILE]
+  sed -f [PATTERN_FILE] [F...]                  Search with a file pattern using [PATTERN_FILE]
+E.G.
+  cat foo.txt | sed 's/foo/bar/'
+  sed -i.backup -f foo.sed foo.txt
+  sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
 
 [1.11] - MANIPULATING TAR ARCHIVE(S)
