@@ -25,9 +25,24 @@ E.G.
   chmod -h
 
 
-[0.2] - WILDCARDS
+[0.2] - WILDCARDS AND REGULAR EXPRESSIONS
 ----
-
+STANDARD WILDCARDS (GLOBBING PATTERNS)
+  ?                                             Represent any single character
+  *                                             Represent any number of character
+  []                                            Specifies a range
+  {}                                            Terms are separated by commas
+  [!]                                           Logical NOT
+REGULAR EXPRESSIONS
+  .                                             Match any single character
+  ?                                             Match between 0 and 1 of the precending token
+  *                                             Match 0 or more of the precendign token
+  .*                                            Match any string, similar to * in standard
+  ^                                             Match the beginging of a string / a line
+  $                                             Match the end of a string / a line
+  \                                             Used to escape character
+  []                                            Specifies a range
+  [^]                                           Logical NOT
 CATEGORIES OF CHARACTERS
   [:upper:] | A-Z                               Uppercase letters
   [:lower:] | a-z                               Lowercase letters
