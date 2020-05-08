@@ -84,6 +84,7 @@ E.G.
   $HOSTNAME                                     The name of your computer
   $HOME                                         The home directory of the current user
   $PWD                                          The path to workdir directory
+  $OLDPWD                                       The path to the previous workdir directory
   $PS1                                          The prompt settings
   $SHELL                                        The path to default shell
   $EDITOR                                       The path to default text editor
@@ -154,7 +155,7 @@ E.G.
 
 [1.5] - COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
 ----
-  [cp/mv] [F...] [D]                            Copy/Move file(s) to [D]
+  [cp/mv] [F...] [D]                            Copy/Move file(s) at [F...] to directory at  [D]
   --                                            --
   cp -r [FD...] [D]                             Copy file(s) and director(y/ies) recursively to [D]
                                                 (directory, files, subdir and subfiles) 
@@ -167,10 +168,10 @@ E.G.
 
 [1.6] - VIEWING FILE(S)
 ----
-  cat [F...]                                    Display the content of file(s)
-  less [F...]                                   Browse throught a text file(s)
-  head [F...]                                   Output the top portion of file(s)
-  tail [F...]                                   Output the bottom of file(s)
+  cat [F...]                                    Display the content of file(s) at [F...]
+  less [F...]                                   Browse throught a text file(s) at [F...]
+  head [F...]                                   Output the top portion of file(s) at [F...]
+  tail [F...]                                   Output the bottom of file(s) at [F...]
   --
   cat -n [F...]                                 Display with line numbers output
   [head/tail] -n [F...]                         Display n number of lines (10 by default)
@@ -181,8 +182,8 @@ E.G.
 
 [1.7] - EDITING FILE(S)
 ----
-  vim [F...]                                    Use the vim editor to view and modify a file(s)
-  nano [F...]                                   Use the nano editor to view and modify a file(s)
+  vim [F...]                                    Use vim editor to view/modify a file(s) at [F...]
+  nano [F...]                                   Use nano editor to view/modify a file(s) at [F...]
 E.G.
   vim foo.txt  
   nano bar.txt
@@ -190,7 +191,7 @@ E.G.
 
 [1.8] - SORTING FILE(S) CONTENT
 ----
-  sort [F...]                                   Sort or merge lines of text and binary file(s)
+  sort [F...]                                   Sort/merge lines of text/binary file(s) at [F...]
   --                                            --
   sort -r [F...]                                Sort in reverse order
   sort -u [F...]                                Suppress all lines that is equal to another
@@ -203,7 +204,7 @@ E.G.
 
 [1.9] - SEARCH PATTERN IN FILE AND STRING
 ----
-  grep [PATTERN] [F...]                         Search [PATTERN] in [F...]
+  grep [PATTERN] [F...]                         Search [PATTERN] in file(s) at [F...]
   --                                            --
   grep -E [PATTERN] [F...]                      Search with extended regex
   grep -f [PATTERN_FILE] [F...]                 Search with a file pattern using [PATTERN_FILE]
@@ -220,7 +221,7 @@ E.G.
 [1.10] STREAM EDIT AND TEXT TRANSFORMATION
 ----
   sed 's/[FIND]/[REPLACE]/[FLAGS]' [F...]       Output the file with [FIND] pattern replaced with           
-                                                [REPLACE], with optional [FLAGS]
+                                                [REPLACE], with optional [FLAGS] at [F...]
   --                                             --
   sed 's///' [F...] > [F]                       Create a new file with the output of original file
   sed -i.bak 's///' [F...]                      Create a backup file (foo.txt.bak), rewrite foo.txt
@@ -235,7 +236,8 @@ E.G.
 
 [1.11] FINDING FILES IN DIRECTOR(Y/IES)
 ----
-  find [D...] -name [NAME]                      Find files matching the [NAME] in [D...] 
+  find [D...] -name [NAME]                      Find files matching the [NAME] in director(y/ies) 
+                                                at [D...] 
   --                                            --
   find [D...] -name [NAME] -type [TYPE]         Find files with specific type
   find [D...] -name [NAME] -delete              Find files and delete them
@@ -244,6 +246,21 @@ E.G.
   find ~/foo -name 'foo'
   find ./bar -type f -delete
   find -path '*Library*' -type d -name 'bar'
+
+
+[1.12] CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
+----
+  chmod [MODE] [F...]                           Change mode of file(s) at [F...]
+  chown [OWNER]:[GROUP] [F...]                  Change owner and group of file(s) at [F...]
+  --                                            --
+  chmod -R [MODE] [D...]                        Change permission of director(y/ies), subfile(s)
+                                                and subdirector(y/ies)
+  chown -R [OWNER]:[GROUP] [D...]               Change owner and group of director(y/ies), 
+                                                subfile(s) and subdirector(y/ies)
+E.G.
+  chmod +x-rw foo.sh
+  chmod -R 600 ~/foo ./bar
+  chown user1 foo.sh
 
 
 [1.12] - MANIPULATING TAR ARCHIVE(S)
@@ -264,6 +281,7 @@ E.G.
 
 
 [2] - SYSTEM
+
 
 [2.1] - DISPLAYING DISK USAGE STATE
 ----
