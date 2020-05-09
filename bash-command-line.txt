@@ -244,7 +244,7 @@ E.G.
   grep -f patterns.txt foo.txt
 
 
-[2.10] STREAM EDIT AND TEXT TRANSFORMATION
+[2.10] - STREAM EDIT AND TEXT TRANSFORMATION
 ----
   sed 's/[FIND]/[REPLACE]/[FLAGS]' [F...]       Output the file with [FIND] pattern replaced with           
                                                 [REPLACE], with optional [FLAGS] at [F...]
@@ -260,7 +260,7 @@ E.G.
   sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
 
-[2.11] FINDING FILES IN DIRECTOR(Y/IES)
+[2.11] - FINDING FILES IN DIRECTOR(Y/IES)
 ----
   find [D...] -name [NAME]                      Find files matching the [NAME] in director(y/ies) 
                                                 at [D...] 
@@ -274,7 +274,7 @@ E.G.
   find -path '*Library*' -type d -name 'bar'
 
 
-[2.12] CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
+[2.12] - CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
 ----
   chmod [MODE] [F...]                           Change mode of file(s) at [F...]
   chown [OWNER]:[GROUP] [F...]                  Change owner and group of file(s) at [F...]
