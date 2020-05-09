@@ -322,6 +322,17 @@ E.G.
   curl -sS localhost:80 | sh
 
 
+[2.4] - GET INFORMATION ABOUT A DOMAIN
+----
+  whois [DOMAIN]                                Get all informations about a [DOMAIN]
+  --                                            --
+  whois -h [HOST]                               Use specific [HOST]
+  whois -p [PORT]                               Use specific [PORT]
+E.G.
+  whois reddit.com
+  whois -p 666
+
+
 [3] - SYSTEM
 
 
