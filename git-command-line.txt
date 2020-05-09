@@ -1,0 +1,61 @@
+ ------------------------------------------------------------------------------------------------
+|                                  GIT COMMAND LINE CHEATSHEET                                   |
+|                                                                                                |
+|                                by Alexandre Delaloy - @blyndusk                                |
+ ------------------------------------------------------------------------------------------------
+
+[0.0] - MY NOTATION
+----
+  [D]                                           Directory                            
+  [D...]                                        Directory, directories
+  [F]                                           File
+  [F...]                                        Files
+  [FD]                                          File, directory
+  [FD...]                                       File, files, directory, directories
+
+
+[1] - INTIALIZING A NEW REPOSITORY
+----
+  git init                                      Create a .git folder in the current working 
+                                                directory
+  --                                            --
+  git init [D]                                  Init a git repository in the directory at [D]
+E.G.
+  git init ~/foo
+
+
+[2] - CLONE A REPOSITORY
+----
+  git clone [HTTPS/SSH]                         Create a copy of remote git repository in the 
+                                                current working directory using remote link
+  --                                            --
+  git clone [HTTP/SSH] [D]                      Clone a repository in directory at [D]
+  git clone -o [NAME] [HTTP/SSH]                Use [NAME] instead of the original repository name 
+E.G.
+  git clone git@github.com:mrdoob/three.js.git
+  git clone https://github.com:mrdoob/three.js.git
+  git clone -o bar git@github.com:mrdoob/three.js.git ~/foo
+
+
+[3] - ADD FILES TO THE STAGING AREA
+----
+  git add [FD...]                               Add file(s), director(y/ies), subfile(s) and 
+                                                subdirector(y/ies) at [FD... to the staging area
+  --                                            --
+
+E.G.
+  git add ./bar foo.txt
+  git add *
+
+
+[4] - COMMIT FILES 
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------
+|                                  GIT COMMAND LINE CHEATSHEET                                   |
+|                                                                                                |
+|                                by Alexandre Delaloy - @blyndusk                                |
+ ------------------------------------------------------------------------------------------------
