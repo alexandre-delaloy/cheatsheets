@@ -20,8 +20,8 @@
 
 [1.1] - GETTING HELP
 ----
-  man [command]                                 Read the manual for a given command
-  [command] -h | --help                         Ask the command for help
+  man [cmd]                                     Read the manual for a given command
+  [cmd] -h | --help                             Ask the command for help
 E.G.
   man chmod
   chmod -h
@@ -34,6 +34,7 @@ E.G.
   uptime                                        Display uptime
   top                                           Display live informations about currently processes
   whoami                                        Display your username
+  clear                                         Clear the current terminal
 
 
 [1.3] - ENVIRONMENT VARIABLES
@@ -84,8 +85,8 @@ CATEGORIES OF CHARACTERS
 COMMAND RUN => [du -h /], [ls $HOME]
   ![a-z]                                        Rerun the command matching the [a-z] string
   !!                                            Rerun the last command
-  [command] !*                                  Reuse all arguments of the last command
-  [command] !$                                  Reuse last argument of the last command
+  !*                                            All arguments of the last command
+  !$                                            Last argument of the last command
 E.G.
   !d                                            => du -h /
   !ls                                           => ls $HOME
@@ -99,6 +100,18 @@ E.G.
   touch foo.txt bar.txt                         => ok
   ls !*                                         => ls foo.txt bar.txt
   ls !$                                         => ls bar.txt
+
+
+[1.6] - INPUT / OUTPUT HANDLING
+----
+  [CMD] > [FILE]                                Standard output (stdout) of [CMD] to [FILE]
+  [CMD] >> [FILE]                               Append the output of [CMD] into [FILE]
+  [CMD1] | [CMD1]                               Stdout of [CMD1] to [CMD2]
+  [CMD] > /dev/null                             Discard stdout of [CMD]
+E.G.
+  ls -la > foo.txt
+  pwd >> bar.txt
+  cat ~/.bash_history | grep 'docker' | less
 
 
 [2] - FILES AND DIRECTORIES MANIPULATION, NAVIGATION AND DISPLAY
