@@ -8,6 +8,7 @@
 > shitty website: [blyndusk.github.io/cheatsheets](https://blyndusk.github.io/cheatsheets/)
 
 - [Bash Command Line Cheat Sheet](./bash-command-line.txt)
+- [Git Command Line Cheat Sheet](./git-command-line.txt)
 
 ## Use
 
@@ -30,7 +31,7 @@ source woo.sh [category] goto [command]
 
 e.g.
 
-source woo.sh bash goto mkdir
+source woo.sh git goto commit
 source woo.sh bash goto 0.3
 ```
 

@@ -1,6 +1,8 @@
 #!/bin/bash 
 if [[ $1 =~ [bB][aA][sS][hH] ]] ; then
   FILE="bash-command-line.txt"
+elif [[ $1 =~ [gG][iI][tT] ]] ; then
+  FILE="git-command-line.txt"
 fi
 
 if [[ $2 =~ [tT][oO][cC] ]]; then
