@@ -5,10 +5,10 @@
  ------------------------------------------------------------------------------------------------
 
 
-[0] - GENERAL
+[1] - GENERAL & SYSTEM
 
 
-[0.0] - MY NOTATION
+[1.0] - MY NOTATION
 ----
   [D]                                           Directory                            
   [D...]                                        Directory, directories
@@ -18,7 +18,7 @@
   [FD...]                                       File, files, directory, directories
 
 
-[0.1] - GETTING HELP
+[1.1] - GETTING HELP
 ----
   man [command]                                 Read the manual for a given command
   [command] -h | --help                         Ask the command for help
@@ -27,7 +27,30 @@ E.G.
   chmod -h
 
 
-[0.2] - WILDCARDS AND REGULAR EXPRESSIONS
+[1.2] - GET INFORMATIONS
+----
+  uname -archive                                Display system and kernel
+  date                                          Display system date
+  uptime                                        Display uptime
+  top                                           Display live informations about currently processes
+  whoami                                        Display your username
+
+
+[1.3] - ENVIRONMENT VARIABLES
+----
+  printenv                                      Display all environment variables 
+  --                                            --
+  $USERNAME                                     The name of the user
+  $HOSTNAME                                     The name of your computer
+  $HOME                                         The home directory of the current user
+  $PWD                                          The path to workdir directory
+  $OLDPWD                                       The path to the previous workdir directory
+  $PS1                                          The prompt settings
+  $SHELL                                        The path to default shell
+  $EDITOR                                       The path to default text editor
+
+
+[1.4] - WILDCARDS AND REGULAR EXPRESSIONS
 ----
 STANDARD WILDCARDS (GLOBBING PATTERNS)
   ?                                             Represent any single character
@@ -56,7 +79,7 @@ CATEGORIES OF CHARACTERS
   [:space:]                                     Whitespace
 
 
-[0.3] - RERUN COMMANDS AND REUSE ARGUMENTS
+[1.5] - RERUN COMMANDS AND REUSE ARGUMENTS
 ----
 COMMAND RUN => [du -h /], [ls $HOME]
   ![a-z]                                        Rerun the command matching the [a-z] string
@@ -78,39 +101,27 @@ E.G.
   ls !$                                         => ls bar.txt
 
 
-[0.4] - ENVIRONMENT VARIABLES
-----
-  printenv                                      Display all environment variables 
-  --                                            --
-  $USERNAME                                     The name of the user
-  $HOSTNAME                                     The name of your computer
-  $HOME                                         The home directory of the current user
-  $PWD                                          The path to workdir directory
-  $OLDPWD                                       The path to the previous workdir directory
-  $PS1                                          The prompt settings
-  $SHELL                                        The path to default shell
-  $EDITOR                                       The path to default text editor
-  
-
-[1] - FILES AND DIRECTORIES MANIPULATION, NAVIGATION AND DISPLAY
+[2] - FILES AND DIRECTORIES MANIPULATION, NAVIGATION AND DISPLAY
 
 
-[1.1] - LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
+[2.1] - LISTING FILE(S) AND DIRECTOR(Y/IES) CONTENT
 ----
   ls [FD...]                                    List file(s) or director(y/ies) at [FD...]
   --                                            --
   ls [FD1...] [FD2...]                          List both [FD1...] and [FD2...]
-  ls -l [FD...]                                 Long listing format
   ls -a [FD...]                                 Show all files, including hidden files
+  ls -l [FD...]                                 Long listing format
+  ls -t [FD...]                                 Sort by last modified
+  ls -S [FD...]                                 Sort by file size
   ls -R [FD...]                                 Recursive listing
   ls -F [FD...]                                 Show type of each file 
                                                 (/=directory, *=executable, @=link)
 E.G.
   ls ~/foo
-  ls -la $HOME ./bar
+  ls -laS $HOME ./bar
 
 
-[1.2] - CHANGING DIRECTORY
+[2.2] - CHANGING DIRECTORY
 ----
   cd [D]                                        Change into the directory at [D]
   --                                            --
@@ -125,7 +136,7 @@ E.G.
   cd ../../../../
 
 
-[1.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
+[2.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
 ----
   mkdir [D...]                                  Create director(y/ies) at [D...]
   --                                            --
@@ -139,7 +150,7 @@ E.G.
   touch foo.txt ~/foo/bar.txt
 
 
-[1.4] - REMOVING FILE(S) AND DIRECTOR(Y/IES)
+[2.4] - REMOVING FILE(S) AND DIRECTOR(Y/IES)
 ----
   rmdir [D...]                                  Remove director(y/ies) at [D...] (it must be empty)
   rm [F...]                                     Remove file(s) at [F...]
@@ -155,7 +166,7 @@ E.G.
   rm -rf ~/foo ./bar
 
 
-[1.5] - COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
+[2.5] - COPYING, MOVING AND RENAMING FILE(S) AND DIRECTOR(Y/IES)
 ----
   [cp/mv] [F...] [D]                            Copy/Move file(s) at [F...] to directory at  [D]
   --                                            --
@@ -168,7 +179,7 @@ E.G.
   mv foo.txt bar.txt  
 
 
-[1.6] - VIEWING FILE(S)
+[2.6] - VIEWING FILE(S)
 ----
   cat [F...]                                    Display the content of file(s) at [F...]
   less [F...]                                   Browse throught a text file(s) at [F...]
@@ -182,7 +193,7 @@ E.G.
   head -6 foo.txt
 
 
-[1.7] - EDITING FILE(S)
+[2.7] - EDITING FILE(S)
 ----
   vim [F...]                                    Use vim editor to view/modify a file(s) at [F...]
   nano [F...]                                   Use nano editor to view/modify a file(s) at [F...]
@@ -191,7 +202,7 @@ E.G.
   nano bar.txt
 
 
-[1.8] - SORTING FILE(S) CONTENT
+[2.8] - SORTING FILE(S) CONTENT
 ----
   sort [F...]                                   Sort/merge lines of text/binary file(s) at [F...]
   --                                            --
@@ -204,7 +215,7 @@ E.G.
   sort -k 2 foo.txt
 
 
-[1.9] - SEARCH PATTERN IN FILE AND STRING
+[2.9] - SEARCH PATTERN IN FILE AND STRING
 ----
   grep [PATTERN] [F...]                         Search [PATTERN] in file(s) at [F...]
   --                                            --
@@ -220,7 +231,7 @@ E.G.
   grep -f patterns.txt foo.txt
 
 
-[1.10] STREAM EDIT AND TEXT TRANSFORMATION
+[2.10] STREAM EDIT AND TEXT TRANSFORMATION
 ----
   sed 's/[FIND]/[REPLACE]/[FLAGS]' [F...]       Output the file with [FIND] pattern replaced with           
                                                 [REPLACE], with optional [FLAGS] at [F...]
@@ -236,7 +247,7 @@ E.G.
   sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
 
-[1.11] FINDING FILES IN DIRECTOR(Y/IES)
+[2.11] FINDING FILES IN DIRECTOR(Y/IES)
 ----
   find [D...] -name [NAME]                      Find files matching the [NAME] in director(y/ies) 
                                                 at [D...] 
@@ -250,7 +261,7 @@ E.G.
   find -path '*Library*' -type d -name 'bar'
 
 
-[1.12] CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
+[2.12] CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
 ----
   chmod [MODE] [F...]                           Change mode of file(s) at [F...]
   chown [OWNER]:[GROUP] [F...]                  Change owner and group of file(s) at [F...]
@@ -265,7 +276,7 @@ E.G.
   chown user1 foo.sh
 
 
-[1.12] - MANIPULATING TAR ARCHIVE(S)
+[2.13] - MANIPULATING TAR ARCHIVE(S)
 ----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
@@ -282,10 +293,22 @@ E.G.
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
 
 
-[2] - NETWORK
+[2.14] - DISPLAYING DISK USAGE STATE
+----
+  du                                            Estimate file(s) usage (all files in workdir)
+  --                                            --
+  du [FD...]                                    Estimate file(s) usage at [FD...]
+  du -h                                         Display size in human readable format (octets)
+  du -k                                         Display size in Kilobytes
+E.G.
+  du ~/foo ./bar
+  du -h /
 
 
-[2.1] - REMOTE LOGIN TO A HOST OR INSTANCE
+[3] - NETWORK
+
+
+[3.1] - REMOTE LOGIN TO A HOST OR INSTANCE
 ----
   ssh [USER]@[HOST]                             Establish a SSH connection to the [HOST] with user [USER]
   --
@@ -297,7 +320,7 @@ E.G.
   ssh -p 666 ubuntu@35.181.54.187
 
 
-[2.2] - STATUS OF A HOST
+[3.2] - STATUS OF A HOST
 ----
   ping [HOST]                                   Ping [HOST] and display STATUS
   --                                            --
@@ -309,7 +332,7 @@ E.G.
   ping -c 6 -i 2 -v reddit.com
 
 
-[2.3] - TRANSFER A URL
+[3.3] - TRANSFER A URL
 ----
   curl [URL]                                    Output the response of the URL
   --                                            --
@@ -322,7 +345,7 @@ E.G.
   curl -sS localhost:80 | sh
 
 
-[2.4] - GET INFORMATION ABOUT A DOMAIN
+[3.4] - GET INFORMATION ABOUT A DOMAIN
 ----
   whois [DOMAIN]                                Get all informations about a [DOMAIN]
   --                                            --
@@ -331,21 +354,6 @@ E.G.
 E.G.
   whois reddit.com
   whois -p 666
-
-
-[3] - SYSTEM
-
-
-[3.1] - DISPLAYING DISK USAGE STATE
-----
-  du                                            Estimate file(s) usage (all files in workdir)
-  --                                            --
-  du [FD...]                                    Estimate file(s) usage at [FD...]
-  du -h                                         Display size in human readable format (octets)
-  du -k                                         Display size in Kilobytes
-E.G.
-  du ~/foo ./bar
-  du -h /
 
 
  ------------------------------------------------------------------------------------------------
