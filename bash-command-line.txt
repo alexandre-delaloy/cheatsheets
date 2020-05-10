@@ -143,10 +143,12 @@ E.G.
   cd ../../ n times                             Go up n parent directories 
                                                 (cd ../../../ => 3 parents directories)
   cd -                                          Change to the previous directory
+  cd ~n                                         Change into n directory (see dirs command)
   pwd                                           Return working directory fullname
 E.G.
   cd ~/foo
   cd ../../../../
+  cd 0
 
 
 [2.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
@@ -192,7 +194,17 @@ E.G.
   mv foo.txt bar.txt  
 
 
-[2.6] - VIEWING FILE(S)
+[2.6] - DISPLAYING LIST OD CURRENTLY REMEMBERED DIRECTORIES
+----
+  dirs [D...]                                   Display the history of directories at [D...]
+  --                                            --
+  dirs -l                                       Long list format
+E.G.
+  dirs -l
+  dirs ~
+
+
+[2.7] - VIEWING FILE(S)
 ----
   cat [F...]                                    Display the content of file(s) at [F...]
   less [F...]                                   Browse throught a text file(s) at [F...]
@@ -206,7 +218,7 @@ E.G.
   head -6 foo.txt
 
 
-[2.7] - EDITING FILE(S)
+[2.8] - EDITING FILE(S)
 ----
   vim [F...]                                    Use vim editor to view/modify a file(s) at [F...]
   nano [F...]                                   Use nano editor to view/modify a file(s) at [F...]
@@ -215,7 +227,7 @@ E.G.
   nano bar.txt
 
 
-[2.8] - SORTING FILE(S) CONTENT
+[2.9] - SORTING FILE(S) CONTENT
 ----
   sort [F...]                                   Sort/merge lines of text/binary file(s) at [F...]
   --                                            --
@@ -228,7 +240,7 @@ E.G.
   sort -k 2 foo.txt
 
 
-[2.9] - SEARCH PATTERN IN FILE AND STRING
+[2.10] - SEARCH PATTERN IN FILE AND STRING
 ----
   grep [PATTERN] [F...]                         Search [PATTERN] in file(s) at [F...]
   --                                            --
@@ -244,7 +256,7 @@ E.G.
   grep -f patterns.txt foo.txt
 
 
-[2.10] - STREAM EDIT AND TEXT TRANSFORMATION
+[2.11] - STREAM EDIT AND TEXT TRANSFORMATION
 ----
   sed 's/[FIND]/[REPLACE]/[FLAGS]' [F...]       Output the file with [FIND] pattern replaced with           
                                                 [REPLACE], with optional [FLAGS] at [F...]
@@ -260,7 +272,7 @@ E.G.
   sed -E 's/^[A-Z]+[^0-9]/bar' foo.txt 
 
 
-[2.11] - FINDING FILES IN DIRECTOR(Y/IES)
+[2.12] - FINDING FILES IN DIRECTOR(Y/IES)
 ----
   find [D...] -name [NAME]                      Find files matching the [NAME] in director(y/ies) 
                                                 at [D...] 
@@ -274,7 +286,7 @@ E.G.
   find -path '*Library*' -type d -name 'bar'
 
 
-[2.12] - CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
+[2.13] - CHANGE FILE MODE, ACCESS, PREMISSIONS AND OWNER
 ----
   chmod [MODE] [F...]                           Change mode of file(s) at [F...]
   chown [OWNER]:[GROUP] [F...]                  Change owner and group of file(s) at [F...]
@@ -289,7 +301,7 @@ E.G.
   chown user1 foo.sh
 
 
-[2.13] - MANIPULATING TAR ARCHIVE(S)
+[2.14] - MANIPULATING TAR ARCHIVE(S)
 ----
   tar -[ctx]f [OUTPUT_FILE] [FD...]             Manipulate archive from file(s) and director(y/ies)
 OPTIONS
@@ -306,7 +318,7 @@ E.G.
   tar -xzf foo.gz                               Extract 'foo.gz' content in the workdir
 
 
-[2.14] - DISPLAYING DISK USAGE STATE
+[2.15] - DISPLAYING DISK USAGE STATE
 ----
   du                                            Estimate file(s) usage (all files in workdir)
   --                                            --
