@@ -24,7 +24,7 @@ E.G.
   git init ~/foo
 
 
-[2] - CLONE A REPOSITORY
+[2] - CLONING A REPOSITORY
 ----
   git clone [HTTPS/SSH]                         Create a copy of remote git repository in the 
                                                 current working directory using remote link
@@ -37,7 +37,20 @@ E.G.
   git clone -o bar git@github.com:mrdoob/three.js.git ~/foo
 
 
-[3] - ADD FILES TO THE STAGING AREA
+[3] - DISPLAY THE UNTRACKED AND STAGED FILES OF WORKING three
+----
+  git status                                    Display added/modified/renamed/deleted/untracked
+                                                files in the working tree
+  --                                            --
+  git status -s                                 Display in short format
+  git status --porcelain                        Display in short format, but easy-to-parse using
+  git status -b                                 Display current branch
+E.G.
+  git status
+  git status -s -b
+
+
+[4] - ADDING FILES TO THE STAGING AREA
 ----
   git add [FD...]                               Add file(s), director(y/ies), subfile(s) and 
                                                 subdirector(y/ies) at [FD... to the staging area
@@ -48,10 +61,47 @@ E.G.
   git add *
 
 
-[4] - COMMIT FILES 
+[5] - COMMITTING FILES IN THE STAGING AREA
+----
+  git commit -m [MESSAGE]                       Commit added files with a message at [MESSAGE]
+  --                                            --
+  git commit --amend                            View and/or edit the commit with default editor
+E.G.
+  git commit -m "Add: foobar"
+
+
+[6] - PULLING AND PUSHING REMOTE CHANGES
+----
+  git pull                                      Fetch from defautl brznch of default repository url
+  git push                                      Update remote repository with commited files
+  --
+  git pull [REPOSITORY] [BRANCH]                Fetch from [BRANCH] of remote [REPOSITORY]
+  git push [REPOSITORY] [BRANCH]                Update remote [REPOSITORY] at [BRANCH]
+E.G.
+  git pull origin feature/api
+  git pull upstream master  
+  git push origin fix/auth                     
+
+
+[7] - MOVING, RENAMING AND DELETING FILES IN THE STAGING ARENA
+----
+  git mv [OLDFILE] [NEWFILE]                    Rename [OLDFILE] to [NEWFILE] - using `mv` instead
+                                                of `git mv` will delete the file, then create an 
+                                                untracked file, while using `rm` will rename it
+  git rm [F...]                                 Delete the file from the staging area. If you 
+                                                create a file, then add it to the staging area    
+                                                the delete it, it will still be in the staging area
+                                                as 'added' then 'deleted'. `git rm` clear it 
+E.G.
+  git mv foo.txt bar.txt  
+  git rm foobar.txt
 
 
 
+git checkout -- file -> reset the file to the current index
+
+
+"origin" is a shorthand name for the remote repository that a project was originally cloned from. 
 
 
  ------------------------------------------------------------------------------------------------
