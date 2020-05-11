@@ -97,10 +97,7 @@ E.G.
   git rm foobar.txt
 
 
-
 git checkout -- file -> reset the file to the current index
-
-
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 
 
 

@@ -157,7 +157,7 @@ E.G.
   --                                            --
   mkdir -p [D...]                               Create one or more parents directories if needed 
                                                 (mkdir -p foo/bar => 2 parents directories)
-  touch [F...]                                  Create file(s) if doesn't exist
+  touch [F...]                                  Create file(s) if does not exist
 E.G.
   mkdir ./bar
   mkdir -p ~/foo/bar ./bar
@@ -173,7 +173,7 @@ E.G.
   rm -r [FD...]                                 Recursively remove all files, subdirectories and
                                                 files into subdirectories starting at [FD...]
   rm -i [F...]                                  Run in interactive mode
-  rm -f [F...]                                  Remove regardless of the [F...]'s permissions
+  rm -f [F...]                                  Remove regardless of the [F...] permissions
 E.G.
   rmdir ~/foo ./bar
   rm -f ~/foo/bar/foobar.txt

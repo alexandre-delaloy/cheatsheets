@@ -1,14 +1,11 @@
 # Cheatsheets
 
-> 🗞 My cheat sheets, all i've learned so far
-
+> 🗞 My cheat sheets, all I've learned so far
 
 ## Toc
 
-> shitty website: [blyndusk.github.io/cheatsheets](https://blyndusk.github.io/cheatsheets/)
-
-- [Bash Command Line Cheat Sheet](./bash-command-line.txt)
-- [Git Command Line Cheat Sheet](./git-command-line.txt)
+- [Bash Command Line Cheat Sheet](./bash-command-line.sh)
+- [Git Command Line Cheat Sheet](./git-command-line.sh)
 
 ## Use
 
