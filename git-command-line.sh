@@ -97,7 +97,39 @@ E.G.
   git rm foobar.txt
 
 
-git checkout -- file -> reset the file to the current index
+[8] - DISPLAYING HISTORY AND LOGS
+----
+  git log                                       Output the list of commits ordered by date
+  --                                            --
+  git log --all                                 Output all actions
+  git log --graph                               Output commits with a graph of all branches, merge
+  git log --oneline                             Compact output and shorten commit id
+  git log --decorate                            Add colors
+E.G.
+  git log
+  git log --graph --oneline --decorate
+
+
+[9] - CHANGING THE WORKING TREE / BRANCH
+----
+  git checkout [BRANCH]                         Change the working tree with [BRANCH]
+  --                                            --  
+  git checkout -b [BRANCH]                      Create a new branch [BRANCH] from the current
+  git checkout -- [FD...]                       Reset the file with remote changes
+E.G.
+  git checkout -b fix/auth
+  git checkout -- foo.txt
+
+
+[10] - RESET BY UPDATING THE INDEX
+----
+  git reset [FD...]                             Update the index with remote changes at [FD...]
+  --                                            --
+  git reset --hard                              Reset index at last commit for all tracked files
+E.G.
+  git reset foo.txt
+
+
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 
 
 
