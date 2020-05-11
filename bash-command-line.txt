@@ -148,7 +148,7 @@ E.G.
 E.G.
   cd ~/foo
   cd ../../../../
-  cd 0
+  cd ~0
 
 
 [2.3] - CREATING FILE(S) AND DIRECTOR(Y/IES)|
