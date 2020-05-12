@@ -14,6 +14,15 @@
   [FD...]                                       File, files, directory, directories
 
 
+[0.1] - LOCAL GIT STATES
+
+ --------------------------------------------------------------------------------------------------
+|                                |                                 |                               |
+|       WORKING DIRECTORY        |          STAGING AREA           |   REPOSITORY (.GIT FOLDER)    |
+|                                |                                 |                               |
+ --------------------------------------------------------------------------------------------------
+
+
 [1] - INTIALIZING A NEW REPOSITORY
 ----
   git init                                      Create a .git folder in the current workdir
@@ -109,7 +118,23 @@ E.G.
   git log --graph --oneline --decorate
 
 
-[9] - CHANGING THE WORKING TREE / BRANCH
+[9] - COMPARING GIT STATES
+----
+  git diff                                      Output changes between workdir and staging area
+  --                                            --
+  git diff HEAD                                 Output changes between workdir and git repository
+  git diff --staged HEAD                        Output changes between staged area and git repo
+  git diff -- [F...]                            Limits the output to [F...]
+  git diff [COMMITID1] [COMMITID2]              Output changes between 2 commits
+  git diff [BRANCH1] [BRANCH2]                  Output changes between 2 branches
+E.G. 
+  git diff -- foo.txt
+  git diff 342dca5 416babd
+  git diff HEAD HEAD^                           Compare HEAD and HEAD minus 1
+  git diff master origin/master                 Compare local master br and remote master branch
+  
+
+[10] - CHANGING THE WORKING TREE / BRANCH
 ----
   git checkout [BRANCH]                         Change the working tree with [BRANCH]
   --                                            --  
@@ -120,7 +145,7 @@ E.G.
   git checkout -- foo.txt
 
 
-[10] - RESET BY UPDATING THE INDEX
+[11] - RESET BY UPDATING THE INDEX
 ----
   git reset [FD...]                             Update the index with remote changes at [FD...]
   --                                            --
