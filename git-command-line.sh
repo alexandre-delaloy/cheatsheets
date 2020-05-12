@@ -134,24 +134,44 @@ E.G.
   git diff master origin/master                 Compare local master br and remote master branch
   
 
-[10] - CHANGING THE WORKING TREE / BRANCH
+[10] - MANIPULATING BRANCHES
+----
+  git branch                                    List all the branches in the working tree
+  --                                            --
+  git branch -a                                 List all the branches, local and remote
+  git branch -d [BRANCH]                        Delete the branch at [BRANCH]
+  git branch -D [BRANCH]                        Shorcut for `--delete --force`
+  git branch -m [OLDBRANCH] [NEWBRANCH]         Rename [OLDBRANCH] to [NEWBRANCH]
+E.G.
+  git branch -D fix/auth
+  git branch -m feature/route feature/routes
+
+
+[11] - CHANGING THE WORKING TREE / BRANCH
 ----
   git checkout [BRANCH]                         Change the working tree with [BRANCH]
   --                                            --  
   git checkout -b [BRANCH]                      Create a new branch [BRANCH] from the current
   git checkout -- [FD...]                       Reset the file with remote changes
 E.G.
+  git checkout develop
   git checkout -b fix/auth
   git checkout -- foo.txt
 
 
-[11] - RESET BY UPDATING THE INDEX
+[12] - RESET BY UPDATING THE INDEX
 ----
   git reset [FD...]                             Update the index with remote changes at [FD...]
   --                                            --
   git reset --hard                              Reset index at last commit for all tracked files
 E.G.
   git reset foo.txt
+
+
+[13] - MERGING DIFFERENT DEVELOPMENT HISTORIES
+----
+  git merge [BRANCH]                            Merge the [BRANCH] to the current branch
+  --                                            --            
 
 
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 
