@@ -16,8 +16,7 @@
 
 [1] - INTIALIZING A NEW REPOSITORY
 ----
-  git init                                      Create a .git folder in the current working 
-                                                directory
+  git init                                      Create a .git folder in the current workdir
   --                                            --
   git init [D]                                  Init a git repository in the directory at [D]
 E.G.
