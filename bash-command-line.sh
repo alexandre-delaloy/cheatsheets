@@ -87,6 +87,7 @@ COMMAND RUN => [du -h /], [ls $HOME]
   !!                                            Rerun the last command
   !*                                            All arguments of the last command
   !$                                            Last argument of the last command
+  !^                                            First argument of the last command
 E.G.
   !d                                            => du -h /
   !ls                                           => ls $HOME
