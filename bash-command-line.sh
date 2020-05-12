@@ -86,6 +86,7 @@ COMMAND RUN => [du -h /], [ls $HOME]
   ![a-z]                                        Rerun the command matching the [a-z] string
   !!                                            Rerun the last command
   !*                                            All arguments of the last command
+  !^                                            First argument of the last command
   !$                                            Last argument of the last command
 E.G.
   !d                                            => du -h /
