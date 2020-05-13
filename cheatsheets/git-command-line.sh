@@ -215,6 +215,26 @@ E.G.
   git stash pop stash@{1}
 (if [NUMBER] not provided, use last stash as default)
 
+[17] - CREATING, EDITING, DELETING TAGS IN GIT
+----
+  git tag [TAG]                                 Create a tag with [TAG] name
+  --                                            --
+  git tag -a [ANNOTED_TAG]                      Add an annotation to the tag
+  git tag -a [ANNOTED_TAG] [COMMITID]           Add an annotation to the tag and point a commit 
+                                                using [COMMITID]
+  git tag -a [ANNOTED_TAG] -f [COMMITID]        Add an annotation to the tag and replace a commit
+                                                existing tag at [COMMITID]
+  git tag [TAG] -m [MESSAGE]                    Idem but in one line
+  git tag --list                                List all the TAGS
+  git tag --delete [TAG]                        Delete [TAG]
+  git show [TAG]                                Output the logs for the tag
+  git push [REPOSITORY] [BRANCH] --tags         Push any missing tag to the remote repository
+  git push [REPOSITORY] :[TAG]                  Delete the [TAG] from remote repository
+E.G.
+  git tag alpha
+  git tag -a v0.1.0
+  git show v0.1.0 
+
 
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 
 
