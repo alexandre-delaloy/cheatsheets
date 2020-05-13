@@ -159,7 +159,7 @@ E.G.
   git checkout -- foo.txt
 
 
-[12] - RESET BY UPDATING THE INDEX
+[12] - RESETTING BY UPDATING THE INDEX
 ----
   git reset [FD...]                             Update the index with remote changes at [FD...]
   --                                            --
@@ -171,7 +171,31 @@ E.G.
 [13] - MERGING DIFFERENT DEVELOPMENT HISTORIES
 ----
   git merge [BRANCH]                            Merge the [BRANCH] to the current branch
-  --                                            --            
+  --                                            --      
+  git merge [BRANCH] -m [MESSAGE]               Merge with a custom message      
+E.G.
+  git merge fix/auth -m "fix auth"
+
+
+[14] - RE-APPLYING COMMITS FROM A BRANCH TO THE CURRENT
+----
+  git rebase [BRANCH]                           Rebase from [BRANCH]
+  --                                            --
+  git rebase --abort                            Abort the rebase operation and reset HEAD to branch
+  git pull -r origin master                     Rebase after fetching
+E.G.
+  git rebase master
+
+
+[15] - DOWNLOADING DATA FROM A BRANCH
+----
+  git fetch [BRANCH]                            Dowmload new data from [BRANCH] 
+E.G.
+  git fetch origin master
+
+
+
+ 
 
 
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 
