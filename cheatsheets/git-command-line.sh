@@ -194,8 +194,26 @@ E.G.
   git fetch origin master
 
 
-
- 
+[16] - CLEANING THE WORKING DIRECTRY BY SAVING MODIFICATIONS TO APPLY THEM LATER
+----
+  git stash                                     Save all the modifications in a stash
+  --                                            --
+  git stash -u                                  Stash all untracked files too
+  git stash branch [BRANCH]                     Create a new [BRANCH], then move into,
+                                                then stash applied and drop
+  git stash save [MESSAGE]                      Create a stash with a custom message
+  git stash show [NUMBER]                       Show insertions and deletions of files of stash
+  git stash list                                List all saved stashs
+  git stash apply [NUMBER]                      Put back files modification from the stash to the
+                                                working tree   
+  git stash pop [NUMBER]                        Like `apply`, but remove the stash from the list
+  git stash drop [NUMBER]                       Remove the [NUMBER] stash from the list
+  git stash clear                               Remove all the stashs from the list
+E.G.
+  git stash 
+  git stash save "foo stash"-u
+  git stash pop stash@{1}
+(if [NUMBER] not provided, use last stash as default)
 
 
 "origin" is a shorthand name for the remote repository that a project was originally cloned from. 

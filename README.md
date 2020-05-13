@@ -4,8 +4,8 @@
 
 ## Toc
 
-- [Bash Command Line Cheat Sheet](./bash-command-line.sh)
-- [Git Command Line Cheat Sheet](./git-command-line.sh)
+- [Bash Command Line Cheat Sheet](./cheatsheets/bash-command-line.sh)
+- [Git Command Line Cheat Sheet](./cheatsheets/git-command-line.sh)
 
 ## Use
 
