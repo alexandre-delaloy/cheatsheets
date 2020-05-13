@@ -37,6 +37,18 @@ E.G.
   clear                                         Clear the current terminal
 
 
+[1.3] - SHUTDOWN THE SYSTEM AT A GIVEN TIME
+----
+  shutdown [TIME]                               Shutdown the system at [TIME]
+  --                                            --
+  shutdown -s [TIME]                            The system is put to sleep at [TIME]
+  shutdown -r [TIME]                            The system is rebooted at [TIME]
+  shutdown -h [TIME]                            The system is halted at [TIME]
+E.G.
+  shutdown -h now
+  shutdown -r 8:00
+
+
 [1.3] - ENVIRONMENT VARIABLES
 ----
   printenv                                      Display all environment variables 
