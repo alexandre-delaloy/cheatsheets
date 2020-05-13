@@ -49,7 +49,7 @@ E.G.
   shutdown -r 8:00
 
 
-[1.3] - ENVIRONMENT VARIABLES
+[1.4] - ENVIRONMENT VARIABLES
 ----
   printenv                                      Display all environment variables 
   --                                            --
@@ -63,7 +63,7 @@ E.G.
   $EDITOR                                       The path to default text editor
 
 
-[1.4] - WILDCARDS AND REGULAR EXPRESSIONS
+[1.5] - WILDCARDS AND REGULAR EXPRESSIONS
 ----
 STANDARD WILDCARDS (GLOBBING PATTERNS)
   ?                                             Represent any single character
@@ -92,7 +92,7 @@ CATEGORIES OF CHARACTERS
   [:space:]                                     Whitespace
 
 
-[1.5] - RERUN COMMANDS AND REUSE ARGUMENTS
+[1.6] - RERUN COMMANDS AND REUSE ARGUMENTS
 ----
 COMMAND RUN => [du -h /], [ls $HOME]
   ![a-z]                                        Rerun the command matching the [a-z] string
@@ -115,7 +115,7 @@ E.G.
   ls !$                                         => ls bar.txt
 
 
-[1.6] - INPUT / OUTPUT HANDLING
+[1.7] - INPUT / OUTPUT HANDLING
 ----
   [CMD] > [FILE]                                Standard output (stdout) of [CMD] to [FILE]
   [CMD] >> [FILE]                               Append the output of [CMD] into [FILE]
