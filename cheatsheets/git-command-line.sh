@@ -164,6 +164,8 @@ E.G.
   git reset [FD...]                             Update the index with remote changes at [FD...]
   --                                            --
   git reset --hard                              Reset index at last commit for all tracked files
+  git reset HEAD^                               Reset the last commit
+  git reset HEAD~[NUMBER]                       Reset [NUMBER] of last commits at current branch
 E.G.
   git reset foo.txt
 
