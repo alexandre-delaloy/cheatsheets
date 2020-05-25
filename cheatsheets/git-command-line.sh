@@ -25,7 +25,7 @@
 
 [1] - INTIALIZING A NEW REPOSITORY
 ----
-  git init                                      Create a .git folder in the current workdir
+  git init                                      Create a `.git` folder in the current workdir
   --                                            --
   git init [D]                                  Init a git repository in the directory at [D]
 E.G.
@@ -40,9 +40,9 @@ E.G.
   git clone [HTTP/SSH] [D]                      Clone a repository in directory at [D]
   git clone -o [NAME] [HTTP/SSH]                Use [NAME] instead of the original repository name 
 E.G.
-  git clone git@github.com:mrdoob/three.js.git
-  git clone https://github.com:mrdoob/three.js.git
-  git clone -o bar git@github.com:mrdoob/three.js.git ~/foo
+  git clone git@github.com:blyndusk/cheatsheets.git
+  git clone https://github.com:blyndusk/cheatsheets.git
+  git clone -o bar git@github.com:blyndusk/cheatsheets.git ~/foo
 
 
 [3] - DISPLAY THE UNTRACKED AND STAGED FILES OF WORKING three
@@ -51,7 +51,7 @@ E.G.
                                                 files in the working tree
   --                                            --
   git status -s                                 Display in short format
-  git status --porcelain                        Display in short format, but easy-to-parse using
+  git status --porcelain                        Display in short format with easy-to-parse output
   git status -b                                 Display current branch
 E.G.
   git status
@@ -80,7 +80,7 @@ E.G.
 
 [6] - PULLING AND PUSHING REMOTE CHANGES
 ----
-  git pull                                      Fetch from defautl brznch of default repository url
+  git pull                                      Fetch from default branch of default repository URL
   git push                                      Update remote repository with commited files
   --
   git pull [REPOSITORY] [BRANCH]                Fetch from [BRANCH] of remote [REPOSITORY]
@@ -110,7 +110,7 @@ E.G.
   git log                                       Output the list of commits ordered by date
   --                                            --
   git log --all                                 Output all actions
-  git log --graph                               Output commits with a graph of all branches, merge
+  git log --graph                               Output commits with a graph of all branches/merges
   git log --oneline                             Compact output and shorten commit id
   git log --decorate                            Add colors
 E.G.
@@ -131,7 +131,7 @@ E.G.
   git diff -- foo.txt
   git diff 342dca5 416babd
   git diff HEAD HEAD^                           Compare HEAD and HEAD minus 1
-  git diff master origin/master                 Compare local master br and remote master branch
+  git diff master origin/master                 Compare local master br and remote master br
   
 
 [10] - MANIPULATING BRANCHES
@@ -184,9 +184,10 @@ E.G.
   git rebase [BRANCH]                           Rebase from [BRANCH]
   --                                            --
   git rebase --abort                            Abort the rebase operation and reset HEAD to branch
-  git pull -r origin master                     Rebase after fetching
+  git pull -r [REPOSITORY] [BRANCH]             Rebase [REPOSITORY] at [BRANCH] after fetching
 E.G.
   git rebase master
+  git pull -r origin master
 
 
 [15] - DOWNLOADING DATA FROM A BRANCH
@@ -213,9 +214,10 @@ E.G.
   git stash clear                               Remove all the stashs from the list
 E.G.
   git stash 
-  git stash save "foo stash"-u
+  git stash save "foo stash" -u
   git stash pop stash@{1}
-(if [NUMBER] not provided, use last stash as default)
+  (if [NUMBER] not provided, use last stash as default)
+
 
 [17] - CREATING, EDITING, DELETING TAGS IN GIT
 ----
