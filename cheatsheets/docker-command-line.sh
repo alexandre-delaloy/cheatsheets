@@ -24,12 +24,14 @@
   docker run -v [EDIR]:[CDIR]                   Map [EDIR] volume to [CDIR] volume
   docker run -i [IMAGE]                         Interactive mode
   docker run -it [IMAGE] [PROMPT]               Run the container interactively with given [PROMPT]
+  docker run -e [ENVAR=value]                   Set an environment variable at [ENVAR]                  
 E.G.
   docker run nginx
   docker run nginx:latest
   docker run -d -p 8080:8080 nginx
   docker run -v /data/db:/var/lib/mysql
   docker run -it node bash
+  docker run -e APP_THEME=dark node
 
 
 [1.2] - STOP A CONTAINER
@@ -42,6 +44,8 @@ E.G.
 [1.3] - LIST CONTAINERS
 ----
   docker ps                                     List all running containers
+  --                                            --
+  docker ps -a                                  List all container, running or not
 
 
 [1.4] - LIST IMAGES
@@ -95,6 +99,20 @@ E.G.
   FROM node
   FROM node:10 AS build
 
+[2.2] - RUN
+----
+  RUN <command>                                 Run command in shell, default is `/bin/sh -c`
+  --                                            --
+  RUN ["<exec>", "<param1>", "<param2>"]        Run in executable form
+E.G.
+  RUN 'source $HOME/.bashrc; echo $HOME'
+  RUN ["source $HOME/.bashrc", "echo $HOME"]
+
+[2.3] - CMD
+----
+  CMD ["<exec>", "<param1>", "<param2>"]        Run the cmd at the end of the process, as default
+E.G.
+  CMD ["node", "server.js"]
 
 
  ------------------------------------------------------------------------------------------------
