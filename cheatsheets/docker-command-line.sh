@@ -84,6 +84,18 @@ E.G.
   docker logs [CID]                             Output the logs of the container using [CID]               
 
 
+[2.0] DOCKER IMAGES WITH DOCKERFILE
+
+[2.1] - FROM
+----
+  FROM <image>[:<tag>]                          Set a new build stage using <image> base
+  --                                            --
+  FROM <image>[:<tag>] [AS <name>]              Set a name to the build to use it later
+E.G.
+  FROM node
+  FROM node:10 AS build
+
+
 
  ------------------------------------------------------------------------------------------------
 |                                 DOCKER COMMAND LINE CHEATSHEET                                 |
