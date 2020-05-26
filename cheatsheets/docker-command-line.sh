@@ -115,6 +115,34 @@ E.G.
   CMD ["node", "server.js"]
 
 
+[2.4] - ENTRYPOINT  
+----
+  ENTRYPOINT ["<exec>"]                         Run the exec with given parameters in the cli
+
+
+[2.5] - CMD VS ENTRYPOINT
+
+Dockerfile
+```
+FROM ubuntu
+CMD ["sleep", "5"]
+```
++
+`docker run dk-img sleep 10`
+=
+`sleep 10`                                      Comnmand line parameters will get replaced entirely
+--
+Dockerfile
+```
+FROM ubuntu
+ENTRYPOINT ["sleep"]
+```
++
+`docker run dk-img 10`
+=
+`sleep 10`                                      Comnmand line parameters will get appended
+
+
  ------------------------------------------------------------------------------------------------
 |                                 DOCKER COMMAND LINE CHEATSHEET                                 |
 |                                                                                                |
